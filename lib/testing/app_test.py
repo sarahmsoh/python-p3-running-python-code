@@ -27,6 +27,7 @@ class TestAppPy:
         '''
         captured_out = io.StringIO()
         sys.stdout = captured_out
+        print(sys.version)
         runpy.run_path("lib/app.py")
         sys.stdout = sys.__stdout__
         assert(captured_out.getvalue() == "Hello World! Pass this test, please.\n")
